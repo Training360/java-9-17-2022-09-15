@@ -3,6 +3,10 @@ package training.countreduce;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 
+import java.util.ArrayList;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 @Value
 @AllArgsConstructor
 public class Count {

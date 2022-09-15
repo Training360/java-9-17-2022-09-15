@@ -14,10 +14,11 @@ public class CounterSample {
 
     public Count countNumbers(List<Integer> numbers) {
         return numbers.stream()
-                .collect(
-                        Count::new,
-                        Count::add,
-                        Count::add
-                );
+//                .collect(
+//                        Count::new,
+//                        Count::add,
+//                        Count::add
+//                );
+                .collect(Count.count());
     }
 }

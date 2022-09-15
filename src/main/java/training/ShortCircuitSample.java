@@ -37,12 +37,12 @@ public class ShortCircuitSample {
                 .range(0, 10)
                 .mapToObj(i -> {
                     log.info("Create employee xxx");
-                    return new Employee("John " + i, 1970);});
+                    return new Employee(1, "John " + i, 1970);});
 
     }
 
     private static Employee createEmployee(int i) {
         log.info("Create employee");
-        return new Employee("John " + i, 1970);
+        return new Employee(2, "John " + i, 1970);
     }
 }

@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Value;
 
+import java.util.ArrayList;
+import java.util.stream.Collector;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,6 +36,14 @@ public class Count {
         negatives += another.negatives;
         zeros += another.zeros;
         positives += another.positives;
+    }
+
+
+    public static Collector<Integer, Count, Count> count() {
+        return Collector.of(
+                Count::new,
+                Count::add,
+                (i, j) -> {i.add(j); return i;});
     }
 
 }
