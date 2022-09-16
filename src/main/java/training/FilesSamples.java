@@ -20,7 +20,8 @@ public class FilesSamples {
 //            }
 //        }
 
-        try (var file = Files.lines(Path.of("src/main/resources/employees.csv"))) {
+        var file = Files.lines(Path.of("src/main/resources/employees.csv"));
+        try (file) {
             int sum = file
 //                .filter(s -> s.startsWith("1"))
 //                .map(s -> s.substring(s.indexOf(",") + 1))
