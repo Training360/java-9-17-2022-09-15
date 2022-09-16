@@ -80,7 +80,7 @@ public class CollectorSample {
                 names.stream()
                         .collect(
                                 () -> new StringBuilder(),
-                                (StringBuilder sb, String s) -> sb.append(s).append("-"),
+                                (StringBuilder sb, String s) -> sb.append("-").append(s),
                                 (StringBuilder sb1, StringBuilder sb2) ->  sb1.append(sb2)
                         )
         );
