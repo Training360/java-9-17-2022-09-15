@@ -1,13 +1,18 @@
 package training;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 public class Java9Samples {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        Map<String, Integer> names = new HashMap<>();
 //        names.put("Joe", 2);
 //        names.put("Jack", 3);
@@ -36,5 +41,21 @@ public class Java9Samples {
         String s2 = "alma";
         System.out.println(s1 == s2);
 
+        var k = 1; // int
+//        k = k + 0.1; NEM FORDUL
+        var d = 1.0; // double
+
+        List<String> words = List.of("alma", "korte");
+        for (var word: words) {
+            System.out.println(word);
+        }
+
+        var one = (Supplier<Integer>) () -> 1;
+
+        var text = Files.readString(
+//                Paths.get("src/main/resources/employees.csv")
+                Path.of("src/main/resources/employees.csv")
+        );
+        System.out.println(text);
     }
 }
